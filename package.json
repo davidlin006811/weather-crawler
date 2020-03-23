@@ -1,0 +1,26 @@
+{
+    "name": "scraping-weather",
+    "version": "1.0.0",
+    "description": "This is a program to scrape the information of a weather web site",
+    "main": "app1.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "David Lin",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.17.1",
+        "cookie-parser": "^1.4.3",
+        "ejs": "^2.5.6",
+        "express": "^4.15.2",
+        "mongodb": "^2.2.26",
+        "monk": "^4.0.0",
+        "morgan": "^1.8.1",
+        "jquery": "^3.2.1",
+        "serve-favicon": "^2.4.2",
+        "promise": "^7.1.1",
+        "phantom": "^4.0.3",
+        "superagent": "^3.5.2",
+        "node-schedule": "^1.2.3"
+    }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="icons/font/css/iconic-bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+<title>Weather Search</title>
+</head>
+<body>
+
+	<div class = "location clearfix">
+		<div class = "city-bar"><h1></h1></div>
+		
+		<div class = "search-bar">
+		<form autocomplete="off" action = "/query" method = "get">
+			
+			<div class = "input-group search-bar">
+			
+				<input type="text" id="txtInput" name = "city" class = "form-control" placeholder="Search for location or keyword" >
+				<div class = "input-group-btn" >
+					<button id = "btn1" class = "btn btn-default search-btn" type = "submit"><i class = "glyphicon glyphicon-search"></i></button>
+				</div>
+		</div>
+		<div id="display" class = "input-group display-bar">
+			<ul id="list" class="list-group">			
+			</ul>
+		</div>
+	</form>
+   </div>
+</div>
+			
+<div class = "panel">
+	<div class = "current-panel">
+		<div class = "main-temp ">
+			
+				<div class = "title-bar clearfix">
+					<div class = "condition">
+						<h3></h3>
+					</div>
+					<div class = "high-temp-col">
+						<img src="img/high_temperature.svg" alt="high temperature" class="icon high-temp-icon" >
+						<div class = "col-high">
+							<p class = "col-text high">High <span class = "high-temp-span"></span></p>
+							
+						</div>
+					</div>
+					<div class = "low-temp-col">
+						<img src="img/low_temperature.svg" alt="low temperature" class = "icon low-temp-icon">
+						<div class = "col-low">
+							<p class = "col-text low">Low<span class= 'low-temp-span'></span></p>
+							
+						</div>
+					</div>
+
+				</div>
+				
+				<div class="condition-col clearfix">
+					<div class = "condition-bar">
+						<img/>
+    				</div>
+					<div class = "temp-wrap">
+						<p class="cond-main"></p>
+					</div>
+				</div>
+		</div>			
+
+			<div class = "current-panel2 row clearfix">
+				
+				<div class="humCol ">
+					<img src="img/humidity.svg" alt="humidity" class = "icon" >
+					<div class = "col-humidity">
+						<p class= "col-text"> Humidity </p>
+						<p class = "hum-span"></p>
+					</div>
+				</div>
+				
+				<div class = "sun-rise-col">
+					<img src="img/sun_rise.svg" alt="sun rise" class = "icon sun-rise-icon">
+					<div class = "col-sun-rise">
+						<p class = "col-text">Sun Rise</p>
+						<span></span>
+					</div>
+				</div>
+				<div class = "sun-set-col">
+					<img src="img/sun_set.svg" alt="sun set" class = "icon sun-set-icon">
+					<div class = "col-sun-set">
+						<p class = "col-text">Sun Set</p>
+						<span></span>
+					</div>
+				</div>
+				<div class="windCol">
+					<img src="img/wind.svg" alt="wind" class = "icon" >
+					<div class = "col-content">
+						<p class= "col-text"> Wind </p>
+						<span class = "wind-speed"></span>
+					</div>
+				</div>
+				<div class="wind-direct-col">
+					<img src="img/wind_direct.svg" alt="" class="icon wind-direct-icon">
+					<div class="col-wind-direct">
+						<p>Direct</p>
+						<span></span>
+					</div>
+				</div>
+			</div>
+	
+	</div>
+	<div class= "weather-list-panel">
+			<div class = "weather-nav-bar clearfix">
+				<div class = "nav-list">
+					<a href="#"class = "nav-list">24 Hours</a>
+				</div>
+				<div class = "nav-list">
+					<a href="" class = "nav-list">7 Days</a>
+				</div>
+			</div>
+		
+		<div id = "timeMenu" class = "time-menu">
+			<div class = "time-navi">
+				<a href="#" class="time-list">Day</a>
+			</div>
+			<div class = "time-navi">
+				<a href="#" class="time-list">Night</a>
+			</div>
+			
+		</div>
+		
+		<div id = "dayList" class="day-list clearfix"></div>
+		<div id = "nightList" class = "hidden"></div>
+		
+	</div>
+	<div id = "hoursList" class = "hour-weahter clearfix hidden">
+		<div class = "icon-bar left">
+				<div class = "previous"><a id = "preArrow" href="#" ><</a></div>
+			</div>   
+			<div class = "hours-list">
+				<div class = "list-inner"></div>
+			</div>
+			<div class = "icon-bar">
+			<div  class = "next"><a id = "nextArrow" href="#">></a></div>
+			</div> 
+	</div>
+</div>
+       <footer>
+        <div class="container foot-margin">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                    <div class="inner-margin clearfix">
+                        <div class = "social-media">
+                            <a href="#">
+                                <span class="iconic iconic-social-twitter iconic-sm" title="twitter" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <div class = "social-media">
+                            <a href="#">
+                                <span class="iconic  iconic-social-facebook iconic-sm" title="facebook" aria-hidden="true"></span>
+                            </a>
+                        </div>
+					
+                        <div class = "social-media">
+                            <a href="#">
+                                <span class="iconic  iconic-social-tumblr iconic-sm" title="tumblr" aria-hidden="true"></span>
+                            </a>
+                        </div>
+							<div class = "social-media">
+                        	<a href="#">
+                        		 <span class="iconic  iconic-social-linkedin iconic-sm" title="linkdin" aria-hidden="true"></span>
+                        	</a>
+                        </div>
+                        <div class = "social-media">
+                        	<a href="#">
+                        		 <span class="iconic  iconic-social-google-plus iconic-sm" title="google+" aria-hidden="true"></span>
+                        	</a>
+                        </div>
+						 <div class = "social-media">
+                        	<a href="#">
+                        		 <span class="iconic  iconic-social-github iconic-sm" title="github" aria-hidden="true"></span>
+                        	</a>
+                        </div>
+						
+                    </div>
+                    <p class="copyright text-center ">Copyright &copy; Tzu Chi Green Earth 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bootstrap.native/1.0.4/bootstrap-native.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+	<script src="js/script.js"></script>
+	<script > 
+		currentWeather = <%- JSON.stringify(currentWeather) %>	
+		 var weather = JSON.parse(currentWeather);
+    //console.log(weather);
+    var weeklyWeather = weather.weeklyWeather;
+    var hourlyWeather = weather.hourlyInfo;	
+	</script>
+</body>
+</html>
